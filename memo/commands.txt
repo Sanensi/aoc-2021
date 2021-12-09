@@ -1,0 +1,2 @@
+// Read the content of a file and pass it as arguments to a command
+xargs < input.txt ./main.exe
