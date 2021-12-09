@@ -29,11 +29,8 @@ vector<int> parseInput(const string& path) {
   istream_iterator<string> begin(ifs), end;
   vector<int> input;
 
-  transform(begin, end, back_inserter(input), [](string line) { 
-    return stoi(line);
-  });
-
-  return input;
+  istream_iterator<int> begin(ifs), end;
+  return vector<int>(begin, end);
 }
 
 int scan(const vector<int>& input) {

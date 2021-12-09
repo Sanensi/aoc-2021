@@ -1,0 +1,10 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "main.cpp",
+        "cmd": "make"
+      }
+    ]
+  }
+}
