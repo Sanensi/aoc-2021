@@ -6,7 +6,13 @@
 
 using namespace std;
 
-typedef pair<string, int> InputType;
+class InputType {
+public:
+  string direction;
+  int ammount;
+  InputType(string d, int a): direction(d), ammount(a) {}
+};
+
 vector<InputType> parseInput(const string& path);
 int planCourse(const vector<InputType>& input);
 
@@ -32,7 +38,7 @@ vector<InputType> parseInput(const string& path) {
   int ammount;
 
   while (ifs >> direction >> ammount) {
-    input.push_back(make_pair(direction, ammount));
+    input.push_back(InputType(direction, ammount));
   }
 
   return input;
@@ -44,13 +50,13 @@ int planCourse(const vector<InputType>& input) {
   int horizontal_position = 0;
 
   for (const auto& command: input) {
-    if (command.first == "forward") {
-      horizontal_position += command.second;
-      depth += command.second * aim;
+    if (command.direction == "forward") {
+      horizontal_position += command.ammount;
+      depth += command.ammount * aim;
     }
-    else if (command.first == "down") aim += command.second;
-    else if (command.first == "up") aim -= command.second;
-    else cerr << "Invalid command: " << command.first << endl;
+    else if (command.direction == "down") aim += command.ammount;
+    else if (command.direction == "up") aim -= command.ammount;
+    else cerr << "Invalid command: " << command.direction << endl;
   }
 
   return depth * horizontal_position;
