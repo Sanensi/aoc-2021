@@ -52,9 +52,6 @@ int diagnostic(vector<InputType> input) {
       gamma_ss << '1';
       epsilon_ss << '0';
     }
-    else if (count_of_one == input.size()/2) {
-      cerr << "ALL HELL LOOSE" << endl;
-    }
     else {
       gamma_ss << '0';
       epsilon_ss << '1';

@@ -6,5 +6,9 @@
         "cmd": "make"
       }
     ]
+  },
+  "files.associations": {
+    "initializer_list": "cpp",
+    "iosfwd": "cpp"
   }
 }
