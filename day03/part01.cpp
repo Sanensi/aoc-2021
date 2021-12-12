@@ -10,7 +10,7 @@ using namespace std;
 
 typedef string InputType;
 vector<InputType> parseInput(const string &path);
-int diagnostic(vector<InputType> input);
+int diagnostic(const vector<InputType>& input);
 
 int main(int argc, char** argv)
 {
@@ -33,7 +33,7 @@ vector<InputType> parseInput(const string& path) {
   return vector<InputType>(begin, end);
 }
 
-int diagnostic(vector<InputType> input) {
+int diagnostic(const vector<InputType>& input) {
   vector<int> count_of_ones(input.at(0).length(), 0);
 
   for (const string& number: input) {
