@@ -34,21 +34,21 @@ vector<InputType> parseInput(const string& path) {
 }
 
 int diagnostic(const vector<InputType>& input) {
-  vector<int> count_of_ones(input.at(0).length(), 0);
+  vector<int> countOfOnes(input.at(0).length(), 0);
 
   for (const string& number: input) {
-    assert(number.length() == count_of_ones.size());
+    assert(number.length() == countOfOnes.size());
 
     for (int i = 0; i < number.length(); i++) {
       char bit = number.at(i);
-      if (bit == '1') count_of_ones.at(i)++;
+      if (bit == '1') countOfOnes.at(i)++;
     }
   }
 
   stringstream gamma_ss;
   stringstream epsilon_ss;
-  for (int count_of_one: count_of_ones) {
-    if (count_of_one > input.size()/2) {
+  for (int countOfOne: countOfOnes) {
+    if (countOfOne > input.size()/2) {
       gamma_ss << '1';
       epsilon_ss << '0';
     }
