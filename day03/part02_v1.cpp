@@ -66,14 +66,14 @@ string co2Diagnostic(const vector<InputType>& input) {
 
   int currentBit = 0;
   while (co2Candidates.size() > 1 && currentBit < input.at(0).length()) {
-    int zeroCount = count_if(co2Candidates.begin(), co2Candidates.end(), [&](string candidate) {
+    int zeroCount = count_if(co2Candidates.begin(), co2Candidates.end(), [=](string candidate) {
       return candidate.at(currentBit) == '0';
     });
-    int oneCount = count_if(co2Candidates.begin(), co2Candidates.end(), [&](string candidate) {
+    int oneCount = count_if(co2Candidates.begin(), co2Candidates.end(), [=](string candidate) {
       return candidate.at(currentBit) == '1';
     });
 
-    auto end = remove_if(co2Candidates.begin(), co2Candidates.end(), [&](string candidate) {
+    auto end = remove_if(co2Candidates.begin(), co2Candidates.end(), [=](string candidate) {
       if (zeroCount < oneCount)
         return candidate.at(currentBit) == '1';
       else if (oneCount < zeroCount)
