@@ -9,6 +9,8 @@
   },
   "files.associations": {
     "initializer_list": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "stdexcept": "cpp",
+    "*.tcc": "cpp"
   }
 }
